@@ -1,0 +1,76 @@
+<?php
+
+// set header
+$this->headTitle('Das Lastenrad')->setSeparator(' - ')->setAutoEscape(false);
+$this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0');
+$this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'));
+$this->headLink()->prependStylesheet($this->basePath() . '/css/styles.css');
+$this->headLink()->prependStylesheet($this->basePath() . '/css/bootstrap.min.css');
+$this->headLink()->prependStylesheet($this->basePath() . '/css/ui-lightness/jquery-ui-1.10.4.min.css');
+$this->headLink()->prependStylesheet($this->basePath() . '/css/jquery.datetimepicker.css');
+
+
+$this->headLink()->appendAlternate($this->basePath() . '/blog/rss', 'application/atom+xml', 'RSS Feed');
+
+// Scripts
+$this->headScript()
+	->prependFile($this->basePath() . '/js/bootstrap.min.js')
+	->prependFile($this->basePath() . '/js/jquery.datetimepicker.js')
+	->prependFile($this->basePath() . '/js/jquery-ui-1.10.4.min.js')
+	
+	
+	
+    ->prependFile($this->basePath() . '/js/jquery.min.js')
+    ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+    ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+    ;       				
+            				
+?>
+<?php echo $this->doctype(); ?>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<?php echo $this->headTitle(); ?>
+<?php echo $this->headMeta(); ?>
+<?php echo $this->headLink(); ?>
+<?php echo $this->headScript(); ?>
+<?php echo $this->headStyle(); ?>
+</head>
+<body>
+<?php echo $this->header; ?>
+<div class="container">
+<div class="row">
+<div class="col-md-9  content">
+<div class="well">
+<?php echo $this->pageTitle(); ?>
+<?php echo $this->showMessages(); ?>
+<?php echo $this->content; ?>
+</div>
+</div>
+<div class="col-md-3 sidebar">
+<?php echo $this->sidebar; ?>
+</div>
+</div>
+</div>
+<?php echo $this->footer; ?>
+<?php echo $this->inlineScript() ?>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    //var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.das-lastenrad.at/";
+    var u= "//piwik.das-lastenrad.at/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//piwik.das-lastenrad.at/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>

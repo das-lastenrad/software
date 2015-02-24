@@ -1,0 +1,54 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 18
+ * 
+ * Das Buch "Zend Framework 2 - Das Praxisbuch"
+ * von Ralf Eggert ist im Galileo-Computing Verlag erschienen. 
+ * ISBN 978-3-8362-2610-3
+ * 
+ * @package    User
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.galileocomputing.de/3460
+ */
+
+/**
+ * namespace definition and usage
+ */
+use User\Entity\UserEntity;
+
+/**
+ * User index view script
+ * 
+ * @package    User
+ */
+
+// set user entity
+$user = $this->identity; /* @var $user UserEntity */
+$name = $user->getFirstname() . ' ' . $user->getLastname();
+
+$this->headTitle('Benutzer anzeigen');
+$this->pageTitle('Hallo ' . $name);
+?>
+<table class="table table-data">
+<tbody>
+<tr>
+<th>E-Mail:</th>
+<td><?php echo $user->getEmail(); ?></td>
+</tr>
+<tr>
+<th>Name:</th>
+<td><?php echo $name; ?></td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>
+<?php if ($this->userIsAllowed('user-admin')): ?>
+<?php $url = $this->url('user-admin'); ?>
+<a href="<?php echo $url; ?>" class="btn">Benutzer verwalten</a>
+<?php endif; ?>
+<a href="/" class="btn">Zurück zur Homepage</a>
+</td>
+</tr>
+</tbody>
+</table>

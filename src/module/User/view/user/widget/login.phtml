@@ -1,0 +1,22 @@
+<?php
+
+
+/**
+ * User login widget view script
+ * 
+ * @package    User
+ */
+
+// prepare form
+$actionUrl = $this->url('user', array('action' => 'login'));
+?>
+<div class="well">
+<h4 class="pull-center">Du bist nicht eingeloggt</h4>
+<?php
+  echo $this->showForm($this->form, $actionUrl, '');
+   
+  $forgotPasswordUrl = $this->url('user', array('action' => 'resetPassword'));
+  
+  ?>
+  <p><br><a href="<?php echo $forgotPasswordUrl; ?>">Passwort vergessen?</a></p>
+</div>

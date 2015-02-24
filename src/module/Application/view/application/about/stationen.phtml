@@ -1,0 +1,60 @@
+<?php 
+
+/**
+ * About us view script
+ * 
+ * @package    Application
+ */
+
+$this->headTitle('Stationen');
+$this->pageTitle('Stationen');
+?>
+
+<p>Das Lastenrad hat keinen fixen Standort, sondern wechselt alle paar Wochen die Verleihstation. Auf unserer Website siehst du, wann das Lastenrad wo steht und wo du es abholen kannst.</p>
+
+<h3>Aktuelle Station</h3>
+
+<p>Büro der Nachbarschaften</p>
+<p>Kernstockgasse 20, 8020 Graz</p>
+<p>Öffnungszeiten Mo bis Fr 10 bis 17 Uhr und nach Vereinbarung</p>
+<p>Kontakt: Christian 0676 4068816</p>
+
+
+<p><a href="http://www.openstreetmap.org/?mlat=47.06994&mlon=15.42883#map=19/47.06995/15.42883">Karte anzeigen</a></p>
+<p><img src="/img/stations/kurtcobaingasse20.jpg" alt="Kurt-Cobain-Gasse - Kernstockgasse 20, Graz"class="img-responsive" ></p>
+
+<!-- 
+<h3>Weitere Stationen</h3>
+<p>Co-Working-Space Petersgasse 35, 8010 Graz</p>
+<p>Einfach bei snowreporter anklopfen. Am besten du gibst im Vorhinein Bescheid wenn du vorbeikommst, damit auch wer da ist.</p>
+
+<div class="row">
+  <div class="col-md-12 embed-responsive" id="openstreetmap" data-src="http://www.openstreetmap.org/export/embed.html?bbox=15.399055480957031%2C47.03912927209492%2C15.512351989746094%2C47.088182754504295&amp;layer=mapnik&amp;marker=47.0636616553726%2C15.455703735351562">
+    <iframe src="" id="osmiframe"></iframe>
+  </div>
+                  
+</div>
+<p><a href="http://www.openstreetmap.org/?mlat=47.0637&amp;mlon=15.4557#map=14/47.0637/15.4557">Größere Karte anzeigen</a></p>
+<p><img src="/img/stations/petersgasse35.jpg" alt="Petersgasse 35, Graz"class="img-responsive" ></p>
+ -->
+<h3>Wie werde ich Verleihstation?</h3>
+<p>Egal ob du ein Händler, eine Gastronomiebetrieb, ein Handwerker, ein Büro etc. bist: Schreib uns bitte einfach eine kurze E-Mail an mail@das-lastenrad.at mit der Nachricht, dass du interessiert bist und wir melden uns bei dir.</p>	
+<script>
+
+$( document ).ready(function() {
+
+	$("#osmiframe").height( $("#openstreetmap").height() );
+	$("#osmiframe").width( $("#openstreetmap").width() );
+	
+    src = $('#openstreetmap').attr('data-src');
+    console.log(src);
+    if($("#osmiframe").attr("src")=="")
+    {
+      $("#osmiframe").attr("src",src);
+    }
+	
+	
+});
+	
+
+</script>

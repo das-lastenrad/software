@@ -1,0 +1,48 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 18
+ * 
+ * Das Buch "Zend Framework 2 - Das Praxisbuch"
+ * von Ralf Eggert ist im Galileo-Computing Verlag erschienen. 
+ * ISBN 978-3-8362-2610-3
+ * 
+ * @package    User
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.galileocomputing.de/3460
+ */
+
+/**
+ * User-Admin delete view script
+ * 
+ * @package    User
+ */
+
+$this->headTitle('Benutzer löschen');
+$this->pageTitle('Den ausgewählten Benutzer löschen');
+
+// set user entity
+$user = $this->user; /* @var $user UserEntity */
+$name = $user->getFirstname() . ' ' . $user->getLastname();
+
+$actionUrl = $this->url('user-admin/action', array(), array(), true);
+?>
+<table class="table table-data">
+<tbody>
+<tr>
+<th>Name:</th>
+<td><?php echo $name; ?></td>
+</tr>
+<tr>
+<th>E-Mail: &nbsp;</th>
+<td><?php echo $user->getEmail(); ?></td>
+</tr>
+<tr>
+<th>Rolle:</th>
+<td><?php echo $user->getRoleName(); ?></td>
+</tr>
+</tbody>
+</table>
+<?php echo $this->showForm($this->form, $actionUrl, 'form-horizontal'); ?>
+<hr />
+<a href="<?php echo $this->url('user-admin'); ?>" class="btn">Benutzerliste</a>

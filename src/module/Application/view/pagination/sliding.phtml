@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * pagination sliding control
+ * 
+ * @package    Application
+ */
+?>
+<ul class="pagination pagination-centered">
+<?php if (isset($this->previous)): ?>
+<?php $url = $this->url($this->route, array('page' => $this->previous)); ?>
+<li><a href="<?php echo $url; ?>">&laquo;</a></li>
+<?php else: ?>
+<li class="disabled"><a>&laquo;</a></li>
+<?php endif; ?>
+<?php foreach ($this->pagesInRange as $page) :?>
+<?php if ($page != $this->current): ?>
+<?php $url = $this->url($this->route, array('page' => $page)); ?>
+<li><a href="<?php echo $url; ?>"><?php echo $page; ?></a></li>
+<?php else: ?>
+<li class="active"><a><?php echo $page; ?></a></li>
+<?php endif; ?>
+<?php endforeach; ?>
+<?php if (isset($this->next)): ?>
+<?php $url = $this->url($this->route, array('page' => $this->next)); ?>
+<li><a href="<?php echo $url; ?>">&raquo;</a></li>
+<?php else: ?>
+<li class="disabled"><a>&raquo;</a></li>
+<?php endif; ?>
+</ul>

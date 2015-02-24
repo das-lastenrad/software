@@ -1,0 +1,31 @@
+<?php
+
+$url = $this->url(
+    'application', array('controller' => 'about', 'action' => 'team')
+);
+
+if ($this->getHelperPluginManager()->has('userShowWidget')) {
+    echo $this->userShowWidget();
+}
+?>
+<div class="well">
+<h4 class="pull-center">Ihr Team</h4>
+<div class="pull-center">
+<a href="<?php echo $url?>"><img src="/img/team/team.png" alt="Team" /></a>
+<p><small>Luigi, Francesca, Alessandro, Valentina</small></p>
+</div>
+</div>
+<div class="well">
+<h4 class="pull-center"></h4>
+<p></p>
+<p class="pull-center"><a class="btn btn-primary" href="/about">Info &raquo;</a></p>
+</div>
+<div class="well">
+<p class="pull-center"><a href="http://www.zfforum.de/zend-framework-2-buch/" target="_blank"><img src="/img/stuff/zfforum.jpg"></a></p>
+<p class="pull-center"><a class="btn btn-primary" href="http://www.zfforum.de/zend-framework-2-buch/" target="_blank">Zum Support Forum &raquo;</a></p>
+</div>
+<div class="well">
+<p class="pull-center"><a target="_blank" href="http://www.zendframeworkschulung.de/"><img src="http://www.zendframeworkschulung.de/img/logo.png"></a></p>
+<p>Stärken Sie Ihr Know-how und buchen Sie eine Zend Framework 2 Schulung in Ihrer Nähe.</p>
+<p class="pull-center"><a class="btn btn-primary" target="_blank" href="http://www.zendframeworkschulung.de/">Zend Framework Schulung 2 »</a></p>
+</div>

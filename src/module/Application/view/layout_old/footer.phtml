@@ -1,0 +1,56 @@
+<?php
+/**
+ * ZF2 Buch Kapitel 18
+ * 
+ * Das Buch "Zend Framework 2 - Das Praxisbuch"
+ * von Ralf Eggert ist im Galileo-Computing Verlag erschienen. 
+ * ISBN 978-3-8362-2610-3
+ * 
+ * @package    Application
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.galileocomputing.de/3460
+ */
+
+/**
+ * Footer view script
+ * 
+ * @package    Application
+ */
+?>
+<footer>
+<div class="container">
+<div class="row">
+<div class="span3">
+<h4>Service</h4>
+<ul class="unstyled">
+<li><a href="<?php echo $this->url('application', array('controller' => 'about'))?>">Über uns</a></li>
+<li><a href="<?php echo $this->url('application', array('controller' => 'about', 'action' => 'team'))?>">Team</a></li>
+<li><a href="<?php echo $this->url('application', array('controller' => 'about', 'action' => 'contact'))?>">Kontakt</a></li>
+<li><a href="<?php echo $this->url('application', array('controller' => 'about', 'action' => 'imprint'))?>">Impressum</a></li>
+</ul>
+</div>
+<div class="span3">
+<h4>Informationen</h4>
+<ul class="unstyled">
+<li><a href="<?php echo $this->url('application', array('controller' => 'listing'))?>">Listings Kapitel 18</a></li>
+<li><a href="http://www.zendframeworkbuch.de/" target="_blank">Zend Framework Buch</a></li>
+<li><a href="http://www.zendframeworkschulung.de/" target="_blank">Zend Framework Schulung</a></li>
+</ul>
+</div>
+<div class="span3">
+<h4>Social Media</h4>
+<ul class="unstyled">
+<li><i class="icon-rss"></i>RSS Feed</li>
+<li><i class="icon-facebook"></i>Facebook Fanseite</li>
+<li><i class="icon-google-plus"></i>Google+ Seite</li>
+<li><i class="icon-twitter"></i>Twitter</li>
+</ul>
+</div>
+<div class="span3">
+<h4>Ein Angebot von</h4>
+<img src="/img/luigis-pizza-logo-footer.gif" alt="Luigis Pizza-Service" />
+</div>
+</div>
+</div>
+</footer>

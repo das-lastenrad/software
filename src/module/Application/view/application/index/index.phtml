@@ -1,0 +1,105 @@
+<?php 
+
+$this->headTitle('Herzlich Willkommen');
+$this->pageTitle(sprintf($this->translate('Das Lastenrad  %sGraz%s'), '<span class="zf-green">', '</span>'));
+
+//$user = $this->identity;
+// if (strlen($user->getFirstname())>2) echo "<span class='glyphicon glyphicon-ok'></span>"; 
+
+
+?>
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+  
+    <div class="item active">
+      <img src="/img/carousel/augarten-01.jpg" alt="Das Lastenrad kann kostenlos ausgeliehen werden.">
+      <div class="carousel-caption">
+        Das Lastenrad kann kostenlos ausgeliehen werden.
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="/img/carousel/das-lastenrad-graz.jpg" alt="Ein Lastenrad eignet sich für kleinere Transporte ausgezeichnet.">
+      <div class="carousel-caption">
+        Ein Lastenrad eignet sich für kleinere Transporte ausgezeichnet.
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="/img/carousel/logo_diagonale_carousel.png" alt="Kooperationspartner - Diagonale">
+      <div class="carousel-caption">
+        Diagonale Diagonale GOES GREEN - Das Lastenrad und die Diagonale - Festival des österreichischen Films - sind Kooperationspartner
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="/img/carousel/lastenrad-01.jpg" alt="Zum Siedeln oder für Wochenendeinkäufe - das Lastenrad kann eine umweltfreundliche Alternative zum eigenen Auto sein.">
+      <div class="carousel-caption">
+        Zum Siedeln oder für Wochenendeinkäufe - das Lastenrad kann eine umweltfreundliche Alternative zum eigenen Auto sein.
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+
+<div class="row" style="padding-top: 20px;">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">1. <?php echo $this->translate('Registrieren') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo sprintf($this->translate('Im Kalender seht ihr wann das Lastenrad noch frei ist.')) ?></p>
+                <p><a class="btn btn-success pull-right" href="/user/register/"><?php echo $this->translate('Registrieren') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">2. <?php echo $this->translate('Termin finden und buchen') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo $this->translate('Finde im Kalender einen freien Termin und reservier das Lastenrad.') ?></p>
+                <p><a class="btn btn-success pull-right" href="/kalender"><?php echo $this->translate('Kalender') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">3. <?php echo $this->translate('Abholen') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo $this->translate('Hol das Rad bei der Station ab.') ?></p>
+                <p><a class="btn btn-success pull-right" href="/about/stationen"><?php echo $this->translate('Stationen') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * namespace definition and usage
+ */
+use User\Entity\UserEntity;
+
+/**
+ * User login widget view script
+ * 
+ * @package    User
+ */
+
+// set user entity
+$user = $this->identity; /* @var $user UserEntity */
+
+// prepare form
+$actionUrl = $this->url('user', array('action' => 'logout'));
+?>
+<div class="well">
+<h4 class="pull-center">Hallo <?php echo $user->getFirstname(); ?></h4>
+
+<p><a href="/user" title="mein Profil">Meine Profil</a></p>
+<p><a href="/rentals" title="bisherige Ausleihen">Meine bisherigen Ausleihen</a></p>
+
+<div class="pull-center">
+<?php echo $this->showForm($this->form, $actionUrl, 'form-vertical'); ?>
+</div>
+</div>

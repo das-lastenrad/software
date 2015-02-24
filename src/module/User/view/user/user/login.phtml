@@ -1,0 +1,24 @@
+<?php 
+
+
+/**
+ * User login view script
+ * 
+ * @package    User
+ */
+$this->headTitle('Anmelden');
+$this->pageTitle('Anmelden');
+
+$actionUrl = $this->url('user', array('action' => 'login'));
+
+echo $this->showForm($this->form, $actionUrl, ' ');
+
+$forgotPasswordUrl = $this->url('user', array('action' => 'resetPassword'));
+
+?>
+<p><br><a href="<?php echo $forgotPasswordUrl; ?>">Passwort vergessen?</p>
+
+<hr />
+<h3>Noch nicht registriert?</h3>
+<?php $url = $this->url('user', array('action' => 'register'))?>
+<a href="<?php echo $url; ?>" class="btn btn-default">Jetzt registieren</a>

@@ -1,0 +1,90 @@
+<?php 
+
+/**
+ * namespace definition and usage
+ */
+use Rentals\Entity\RentalsEntity;
+use Rentals\Entity\OpeninghoursEntity;
+
+/**
+ * Rentals index view script
+ * 
+ * @package    Rentals
+ */
+
+$this->headTitle('Verleih');
+$this->pageTitle('Verleih');
+?>
+<?php if ($this->rentalsList) foreach ($this->rentalsList as $rentals) : /* @var $rentals RentalsEntity */ ?>
+<?php
+$urlShow   = $this->url(
+	'rentals/action', array('action' => 'show', 'id' => $rentals->getId()));
+
+$urlEdit   = $this->url(
+    'rentals/action', array('action' => 'update', 'id' => $rentals->getId())
+);
+$urlDelete = $this->url(
+    'rentals/action', array('action' => 'delete', 'id' => $rentals->getId())
+);
+
+$date_from = $this->date($rentals->getFrom(), 'short');
+$date_to = $this->date($rentals->getTo(), 'short');
+
+?>
+
+<h3><a href="<?php echo $urlShow; ?>"><?php echo $date_from; ?> - <?php echo $date_to; ?></a></h3>
+<div class="clearfix">
+<?php echo $rentals->getDescription(); ?>
+<p>
+<a href="<?php echo $urlShow; ?>" class="btn">Ausleihe anzeigen</a>
+<a href="<?php echo $urlEdit; ?>" class="btn">Ausleihe bearbeiten</a>
+<a href="<?php echo $urlDelete; ?>" class="btn">Ausleihe löschen</a>
+
+</p>
+</div>
+<hr />
+<?php endforeach; ?>
+<?php
+if ($this->rentalsList)
+{
+  echo $this->paginationControl(
+    $this->rentalsList, 'Sliding', 'pagination/sliding', 
+    array('route' => 'rentals/page')
+  );
+}
+else
+{
+	echo "<p>Du hast bisher noch keine Ausleihen eingetragen.</p>";
+}
+?>
+
+<?php
+
+if ($this->openinghoursList)
+{  	
+  foreach ($this->openinghoursList AS $openinghours)
+  {
+  	echo "<h2>" . $openinghours->getId() . "</h2>"; 
+  }
+    
+  
+  //print_r($this->openinghoursList);
+  
+}
+else
+{
+	echo "<p>Es sind noch keine Öffnungszeiten eingetragen.</p>";
+}
+	
+?>
+
+<?php if ($this->userIsAllowed('rentals-admin')): ?>
+<p class="pull-center">
+<?php $url = $this->url('rentals-admin'); ?>
+<button type="button" class="btn btn-default" aria-label="Left Align">
+<a href="<?php echo $url; ?>" class="btn">Ausleihen verwalten</a>
+</button>
+</p>
+
+
+<?php endif; ?>

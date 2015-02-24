@@ -1,0 +1,29 @@
+<?php 
+
+$this->headTitle('Kalender');
+$this->pageTitle('Kalender');
+
+$this->headScript()->appendFile('/js/moment.min.js', 'text/javascript');
+$this->headScript()->appendFile('/js/jquery-ui.custom.min.js', 'text/javascript');
+
+
+$this->headScript()->offsetSetFile(100, '/js/fullcalendar/fullcalendar.min.js');
+$this->headScript()->appendFile('/js/kalender.js', 'text/javascript');
+$this->headScript()->appendFile('/js/fullcalendar/lang/all.js', 'text/javascript');
+
+
+$this->headLink()->prependStylesheet('/css/fullcalendar.css');
+$this->headLink()->prependStylesheet('/css/fullcalendar.print.css', 'print');
+
+
+?>
+
+
+
+
+<div id='loading'>lade Kalender...</div>
+
+<div id='calendar'></div>
+	
+	
+

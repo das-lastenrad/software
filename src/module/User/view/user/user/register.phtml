@@ -1,0 +1,11 @@
+<?php 
+
+$this->headTitle('Registrieren');
+$this->pageTitle('Registrieren');
+
+$actionUrl = $this->url('user', array('action' => 'register'));
+
+echo $this->showForm($this->form, $actionUrl, ' ');
+?>
+
+<p><br>Hast du Probleme bei der Registrierung schreib uns ein <a href="/about/imprint" title="Schreib uns ein E-Mail">E-Mail um das Lastenrad auszuborgen.</a></p>

@@ -1,0 +1,43 @@
+<?php 
+
+/**
+ * namespace definition and usage
+ */
+use Blog\Entity\BlogEntity;
+
+/**
+ * Blog show view script
+ * 
+ * @package    Blog
+ */
+
+$blog = $this->blogData;  /* @var $blog BlogEntity */
+
+$this->headTitle($blog->getTitle());
+$this->pageTitle($blog->getTitle());
+
+$urlEdit    = $this->url(
+    'blog-admin/action', array('action' => 'update', 'id' => $blog->getId())
+);
+$urlDelete  = $this->url(
+    'blog-admin/action', array('action' => 'delete', 'id' => $blog->getId())
+);
+$urlComment = $this->url(
+    'blog/action', array('url' => $blog->getUrl())
+);
+?>
+<?php if ($this->getHelperPluginManager()->has('commentShowLinks')) : ?>
+<?php echo $this->commentShowLinks($urlComment); ?>
+<?php endif; ?>
+<?php echo $blog->getContent(); ?>
+<p><em>Datum: <?php echo $this->date($blog->getCdate()); ?></em></p>
+<p>
+<a href="<?php echo $this->url('blog'); ?>" class="btn">Zurück</a>
+<?php if ($this->userIsAllowed('blog-admin')): ?>
+<a href="<?php echo $urlEdit; ?>" class="btn">Beitrag bearbeiten</a>
+<a href="<?php echo $urlDelete; ?>" class="btn">Beitrag löschen</a>
+<?php endif; ?>
+</p>
+<?php if ($this->getHelperPluginManager()->has('commentShowComments')) : ?>
+<?php echo $this->commentShowComments($urlComment); ?>
+<?php endif; ?>

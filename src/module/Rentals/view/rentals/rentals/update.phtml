@@ -1,0 +1,23 @@
+<?php 
+
+/**
+ * namespace definition and usage
+ */
+use Rentals\Entity\RentalsEntity;
+
+/**
+ * Rentals-Admin update view script
+ * 
+ * @package    Rentals
+ */
+
+$this->headTitle('Ausleihe bearbeiten');
+$this->pageTitle('Bearbeiten');
+
+
+// set rentals entity
+$rentals = $this->rentals; /* @var $rentals RentalsEntity */
+
+
+$actionUrl = $this->url('rentals/action', array(), array(), true);
+echo $this->showForm($this->form, $actionUrl, ' ');

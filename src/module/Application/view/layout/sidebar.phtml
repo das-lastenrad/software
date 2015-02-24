@@ -1,0 +1,32 @@
+<?php
+
+
+/**
+ * Sidebar view script
+ * 
+ * @package    Application
+ */
+?>
+<div class="well">
+  <a href="/" title="Home - Das Lastenrad Graz"><img src="/img/das_lastenrad_graz.png" alt="Das Lastenrad Graz"></a>
+</div>
+
+<?php
+if ($this->getHelperPluginManager()->has('userShowWidget')) {
+    echo $this->userShowWidget();
+}
+?>
+
+<?php 
+  //echo $this->userShowCounter();
+?>
+
+<div class="well">
+<p>Wann ist das Lastenrad noch frei?</p>
+<p class="pull-center"><a class="btn btn-primary" href="/kalender">Kalender &raquo;</a></p>
+</div>
+
+<div class="well">
+<p>Ausleihen</p>
+<p class="pull-center"><a class="btn btn-primary" href="/rentals/create">Jetzt ausleihen &raquo;</a></p>
+</div>

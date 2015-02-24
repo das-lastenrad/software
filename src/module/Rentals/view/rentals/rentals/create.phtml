@@ -1,0 +1,45 @@
+<?php 
+
+
+$this->headTitle('Das Lastenrad reservieren');
+$this->pageTitle('Das Lastenrad reservieren');
+
+$actionUrl = $this->url('rentals/action', array('action' => 'create'));
+
+echo $this->showForm($this->form, $actionUrl, '');
+
+
+?>
+
+
+<script>
+  $(function() {
+
+	jQuery('.datepicker').datetimepicker({
+		 lang:'de',
+		 i18n:{
+		  de:{
+		   months:[
+		    'Januar','Februar','März','April',
+		    'Mai','Juni','Juli','August',
+		    'September','Oktober','November','Dezember',
+		   ],
+		   dayOfWeek:[
+		    "So.", "Mo", "Di", "Mi", 
+		    "Do", "Fr", "Sa.",
+		   ]
+		  }
+		 },
+		 startDate:'+1970/01/02',
+		 minDate:'-1970/01/01',
+		 maxDate:'+1970/04/01',
+		 timepicker:true,
+		 minTime:'8:00',
+		 maxTime:'18:00',
+		 format:'d.m.Y H:i'		 
+	});
+	
+  });
+</script>
+ 
+ 

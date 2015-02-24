@@ -1,0 +1,293 @@
+@CHARSET "UTF-8";
+
+body {
+    padding-top: 56px;
+    padding-bottom: 0px;
+    color: #32704c;
+}
+
+a {
+    color: #659378;
+}
+
+a:hover {
+    color: #32704c;
+}
+
+h3 code {
+    font-size: 24px;
+}
+
+footer {
+    background-color: #ddd;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    margin-top: 10px;
+    padding: 20px 0;
+    color: #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: #cbdbd2;
+    text-decoration: underline;
+}
+
+footer .container {
+    padding: 0px 8px;
+}
+
+footer h4 {
+    color: #98b7a5;
+}
+
+hr {
+    margin-top: 8px;
+    margin-bottom: 18px;
+    border-top-color: #ccc;
+}
+
+img.pull-right {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.table input, .table select {
+    margin-bottom: 0px;
+}
+
+.well {
+    padding: 10px;
+}
+
+.hero-unit {
+    background-color: #eee;
+}
+
+.carousel {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #cccccc;
+}
+
+
+.carousel-control {
+    margin-top: 0px;
+}
+
+.carousel-pizza {
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.carousel-pizza h3 {
+    margin-top: 0;
+}
+
+.carousel-pizza img {
+    margin-top: 20px;
+}
+
+.pagination ul {
+    background-color: #ffffff;
+    color: #32704c;
+}
+
+.pagination ul > li > span, 
+.pagination ul > li > a, 
+.pagination ul > li > a:hover {
+    color: #32704c;
+}
+
+.pagination ul > .disabled > span, 
+.pagination ul > .disabled > a, 
+.pagination ul > .disabled > a:hover  {
+    background-color: #eeeeee;
+}
+
+.cms {
+    background-color: #e5ede9;
+}
+
+.table-images {
+    width: 100%;
+}
+
+.table-images td {
+    text-align: center;
+}
+
+.table-images .thumbnail {
+    margin: auto;
+}
+
+.table thead, .table tfoot {
+    background-color: #eeeeee;
+}
+
+.table tfoot th {
+    text-align: center;
+}
+
+.table-data {
+    margin-bottom: 10px;
+}
+
+.table-data tbody th {
+    width: 160px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.table-data th, .table-data td {
+    border-top: none;
+}
+
+.sidebar .table-data tbody th {
+    width: 40px;
+}
+
+.sidebar .form-actions {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+}
+
+.sidebar .control-group {
+    margin: 0px;
+}
+
+.carousel-table td {
+  padding: 20px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.pull-center {
+    text-align: center;
+}
+
+.alert {
+    font-weight: bold;
+}
+
+.content {
+    padding-top: 20px;
+}
+
+.sidebar {
+    padding-top: 20px;
+}
+
+.sidebar form {
+    margin: 0;
+}
+
+.form-horizontal .controls .control-label {
+    text-align: left;
+}
+
+.form-horizontal .controls .control-label input {
+    margin-top: 0px;
+    margin-right: 4px;
+}
+
+.navbar {
+    color: #ffffff;
+}
+
+.navbar .nav > li > a{
+    color: #ffffff;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+    color: #cbdbd2;
+    text-shadow: none;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    background-color: #cbdbd2;
+    color: #32704c;
+}
+
+.navbar {
+    background-color: #444;
+}
+
+.navbar-inner:before,.navbar-inner:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.navbar .brand {
+    padding: 0px 20px;
+}
+
+@media ( max-width : 979px) {
+    .navbar-fixed-top,.navbar-fixed-bottom {
+        position: fixed;
+    }
+    .navbar-fixed-top .navbar-inner,.navbar-fixed-bottom .navbar-inner {
+        padding: 0px;
+    }
+    .navbar .container {
+        width: 724px;
+    }
+    .nav-collapse .dropdown-menu {
+        margin-left: 50px;
+    }
+}
+
+@media ( max-width : 767px) {
+    body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    footer {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .navbar-fixed-top {
+        position: absolute;
+    }
+    .container {
+        width: auto;
+    }
+    .navbar-fixed-top,.navbar-fixed-bottom {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .navbar .container {
+        width: auto;
+    }
+    .carousel-table td {
+        display: table-row;
+        font-size: 85%;
+    }
+    .carousel-table td.img {
+        text-align: center;
+    }
+    .carousel-table td h3 {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .carousel-control {
+        font-size: 40px;
+        height: 25px;
+        width: 25px;
+        line-height: 20px;
+    }
+}
+
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+}
+

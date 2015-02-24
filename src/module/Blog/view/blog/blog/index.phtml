@@ -1,0 +1,56 @@
+<?php 
+
+/**
+ * namespace definition and usage
+ */
+use Blog\Entity\BlogEntity;
+
+/**
+ * Blog index view script
+ * 
+ * @package    Blog
+ */
+
+$this->headTitle('Lastenrad-Blog');
+$this->pageTitle('Lastenrad-Blog');
+?>
+<?php foreach ($this->blogList as $blog) : /* @var $blog BlogEntity */ ?>
+<?php
+$urlShow   = $this->url('blog/action', array('url' => $blog->getUrl()));
+$urlEdit   = $this->url(
+    'blog-admin/action', array('action' => 'update', 'id' => $blog->getId())
+);
+$urlDelete = $this->url(
+    'blog-admin/action', array('action' => 'delete', 'id' => $blog->getId())
+);
+?>
+<h3><?php echo $blog->getTitle(); ?></h3>
+<div class="clearfix">
+<?php if ($this->getHelperPluginManager()->has('commentShowLinks')) : ?>
+<?php echo $this->commentShowLinks($urlShow); ?>
+<?php endif; ?>
+<?php echo $blog->getTeaser(); ?>
+<p><em>Datum: <?php echo $this->date($blog->getCdate()); ?></em></p>
+<p>
+<a href="<?php echo $urlShow; ?>" class="btn">Weiter lesen</a>
+<?php if ($this->userIsAllowed('blog-admin')): ?>
+<a href="<?php echo $urlEdit; ?>" class="btn">Beitrag bearbeiten</a>
+<a href="<?php echo $urlDelete; ?>" class="btn">Beitrag löschen</a>
+<?php endif; ?>
+</p>
+</div>
+<hr />
+<?php endforeach; ?>
+<?php
+echo $this->paginationControl(
+    $this->blogList, 'Sliding', 'pagination/sliding', 
+    array('route' => 'blog/page')
+);
+?>
+<?php if ($this->userIsAllowed('blog-admin')): ?>
+<p class="pull-center">
+<?php $url = $this->url('blog-admin'); ?>
+<a href="<?php echo $url; ?>" class="btn">Blogbeiträge verwalten</a>
+</p>
+<?php endif; ?>
+

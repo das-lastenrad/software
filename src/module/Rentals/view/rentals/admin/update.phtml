@@ -1,0 +1,53 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 18
+ * 
+ * Das Buch "Zend Framework 2 - Das Praxisbuch"
+ * von Ralf Eggert ist im Galileo-Computing Verlag erschienen. 
+ * ISBN 978-3-8362-2610-3
+ * 
+ * @package    Rentals
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.galileocomputing.de/3460
+ */
+
+/**
+ * namespace definition and usage
+ */
+use Rentals\Entity\RentalsEntity;
+
+/**
+ * Rentals-Admin update view script
+ * 
+ * @package    Rentals
+ */
+
+$this->headTitle('Rentals bearbeiten');
+$this->pageTitle('Eine bestehende Rentals bearbeiten');
+
+$this->headScript()->appendFile(
+    $this->basePath() . '/js/ckeditor/ckeditor.js', 'text/javascript'
+);
+
+// set rentals entity
+$rentals = $this->rentals; /* @var $rentals RentalsEntity */
+
+// set show url
+$urlShow = $this->url('rentals/url', array('url' => $rentals->getUrl()));
+?>
+<table class="table table-data">
+<tbody>
+<tr>
+<th>Url:</th>
+<td><a href="<?php echo $urlShow; ?>"><?php echo $urlShow; ?></a></td>
+</tr>
+<tr>
+<th>Bild:</th>
+<td><?php echo $this->rentalsShowPicture($this->rentals); ?></td>
+</tr>
+</tbody>
+</table>
+<?php 
+$actionUrl = $this->url('rentals-admin/action', array(), array(), true);
+echo $this->showForm($this->form, $actionUrl, 'form-horizontal');

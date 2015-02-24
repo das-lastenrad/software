@@ -1,0 +1,37 @@
+<?php 
+
+/**
+ * namespace definition and usage
+ */
+use Rentals\Entity\RentalsEntity;
+
+/**
+ * Rentals-Admin delete view script
+ * 
+ * @package    Rentals
+ */
+
+$this->headTitle('Ausleihe löschen');
+$this->pageTitle('Die ausgewählte Ausleihe löschen');
+
+// set rentals entity
+$rentals = $this->rentals; /* @var $rentals RentalsEntity */
+
+?>
+<table class="table table-data">
+<tbody>
+
+<tr>
+<th>Zeitraum:</th>
+<td><?php echo $rentals->getFrom(); ?> - <?php echo $rentals->getTo(); ?></td>
+</tr>
+
+<tr>
+<th>Beschreibung:</th>
+<td><?php echo $rentals->getDescription(); ?></td>
+</tr>
+</tbody>
+</table>
+<?php 
+$actionUrl = $this->url('rentals/action', array(), array(), true);
+echo $this->showForm($this->form, $actionUrl, 'form-horizontal'); 

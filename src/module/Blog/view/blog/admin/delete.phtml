@@ -1,0 +1,50 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 19
+ * 
+ * Das Buch "Zend Framework 2 - Das Praxisbuch"
+ * von Ralf Eggert ist im Galileo-Computing Verlag erschienen. 
+ * ISBN 978-3-8362-2610-3
+ * 
+ * @package    Blog
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.galileocomputing.de/3460
+ */
+
+/**
+ * namespace definition and usage
+ */
+use Blog\Entity\BlogEntity;
+
+/**
+ * Blog-Admin delete view script
+ * 
+ * @package    Blog
+ */
+
+$this->headTitle('Blogbeitrag löschen');
+$this->pageTitle('Den ausgewählten Blogbeitrag löschen');
+
+// set blog entity
+$blog = $this->blog; /* @var $blog BlogEntity */
+?>
+<table class="table table-data">
+<tbody>
+<tr>
+<th>Überschrift:</th>
+<td><?php echo $blog->getTitle(); ?></td>
+</tr>
+<tr>
+<th>Anreißer:</th>
+<td><?php echo $blog->getTeaser(); ?></td>
+</tr>
+<tr>
+<th>Datum:</th>
+<td><?php echo $this->date($blog->getCdate()); ?></td>
+</tr>
+</tbody>
+</table>
+<?php 
+$actionUrl = $this->url('blog-admin/action', array(), array(), true);
+echo $this->showForm($this->form, $actionUrl, 'form-horizontal'); 

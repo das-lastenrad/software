@@ -1,0 +1,46 @@
+<?php 
+
+/**
+ * namespace definition and usage
+ */
+use Rentals\Entity\RentalsEntity;
+
+/**
+ * Rentals show view script
+ * 
+ * @package    Rentals
+ */
+
+$rentals = $this->rentalsData;  /* @var $rentals RentalsEntity */
+
+$this->headTitle("Ausleihe " . $rentals->getId());
+$this->pageTitle("Ausleihe " . $rentals->getId());
+
+$date_from = $this->date($rentals->getFrom(), 'short');
+$date_to = $this->date($rentals->getTo(), 'short');
+
+
+?>
+<div class="clearfix">
+<?php echo $rentals->getDescription(); ?>
+</div>
+<hr />
+<table class="table table-data">
+<tbody>
+
+<tr>
+<th>Zeitraum</th>
+<td><?php echo $date_from; ?> - <?php echo $date_to; ?></td>
+</tr>
+
+<tr>
+<th>Beschreibung</th>
+<td><?php echo $rentals->getDescription(); ?></td>
+</tr>
+
+<tr>
+<th>&nbsp;</th>
+<td><a href="<?php echo $this->url('rentals'); ?>" class="btn">Zurück</a></td>
+</tr>
+</tbody>
+</table>

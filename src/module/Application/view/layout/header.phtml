@@ -1,0 +1,30 @@
+
+
+
+
+
+<div role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a href="/" class="navbar-brand">Das Lastenrad Graz</a> --> 
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/kalender"><span class="glyphicon glyphicon-calendar"></span> Kalender</a></li>
+            <li><a href="/rentals/create"><span class="glyphicon glyphicon-hand-right"></span> Ausleihen</a></li>
+            <li><a href="/about/stationen"><span class="glyphicon glyphicon-map-marker"></span> Stationen</a></li>                        
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="<?php echo $this->url('blog', array('controller' => 'index', 'action' => 'index'))?>"><span class="glyphicon glyphicon-heart"></span> Blog</a></li> -->
+            <li><a href="<?php echo $this->url('application', array('controller' => 'about', 'action' => 'imprint'))?>"><span class="glyphicon glyphicon-info-sign"></span> Impressum</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    

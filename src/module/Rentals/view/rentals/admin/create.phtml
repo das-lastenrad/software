@@ -1,0 +1,18 @@
+<?php 
+
+/**
+ * Pizza-Admin create view script
+ * 
+ * @package    Pizza
+ */
+
+$this->headTitle('Pizza anlegen');
+$this->pageTitle('Einen neue Pizza anlegen');
+
+$this->headScript()->appendFile(
+    $this->basePath() . '/js/ckeditor/ckeditor.js', 'text/javascript'
+);
+
+$actionUrl = $this->url('rentals/action', array('action' => 'create'));
+
+echo $this->showForm($this->form, $actionUrl, 'form-horizontal');

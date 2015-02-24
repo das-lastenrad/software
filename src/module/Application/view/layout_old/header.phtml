@@ -1,0 +1,43 @@
+<?php
+/**
+ * ZF2 Buch Kapitel 18
+ * 
+ * Das Buch "Zend Framework 2 - Das Praxisbuch"
+ * von Ralf Eggert ist im Galileo-Computing Verlag erschienen. 
+ * ISBN 978-3-8362-2610-3
+ * 
+ * @package    Application
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.galileocomputing.de/3460
+ */
+
+/**
+ * Header view script
+ * 
+ * @package    Application
+ */
+
+?>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img src="/img/luigis-pizza-logo-menu.gif" alt="Luigis Pizza-Service" />
+</a>
+<div class="nav-collapse">
+<?php 
+$this->navigation('navigation')->menu()->setUlClass('nav');
+echo $this->navigation('navigation')->menu()->renderMenu(
+    null, array('maxDepth' => 0)
+);
+?>
+</div>
+</div>
+</div>
+</div>

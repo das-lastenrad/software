@@ -12,5 +12,10 @@ a2enmod ssl
 a2enmod rewrite
 ```
 
+Installation des Frameworks
 
-
+```
+git clone https://github.com/das-lastenrad/software.git
+php composer.phar self-update
+php composer.phar install
+```
